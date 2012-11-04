@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-AT" lang="de-AT" dir="ltr" >
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="title" content="l" />
+  <meta name="description" content="" />
+  <title>autobur</title>
+
+    <script type="text/javascript" src="js/OpenLayers/OpenLayers.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/monitor.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.17.custom.css" type="text/css" />
+  </head>
+  <body onload="initMap();initMenu();initMonitor()">
+    <div id="menu">
+      <h1>linz fährt</h1>
+      <a onclick="$('#lines_dialog').dialog({ width: 400 })">Linienauswahl</a>
+
+      <a onclick="$('#infos_dialog').dialog({ width: 600 })">Infos</a>
+      <a onclick="$('#about_dialog').dialog({ width: 400 })">Impressum</a>
+    </div>
+    <div id="map"></div>
+
+    <div id="lines_dialog" title="Linienauswahl" class="dialog">
+      <a onclick="selectAllLines()">alle</a>
+      <a onclick="selectNoLine()">keine</a>
+
+    </div>
+
+    <div id="infos_dialog" title="Infos" class="dialog">
+      <p style="text-align: justify;"><strong>Was sehe ich hier?</strong></p>
+      <p style="text-align: justify;">Die Applikation berechnet die aktuellen Positionen der Öffis der Linz AG Linien und visualisiert die Verkehrsmittel auf einer Karte. Es werden die Linienverläufe, Haltestellen und aktuellen Verkehrsmittel-Positionen im Stadtgebiet von Linz angezeigt. Darüber hinausgehende Geodaten werden aktuell von der Linz AG nicht zur Verfügung gestellt. (<em>Stand: 03/2012</em>)</p>
+      <p style="text-align: justify;"><strong>Welche Funktionen bietet die Applikation?</strong></p>
+      <ul style="text-align: justify;">
+
+        <li>Beim Klicken auf Haltestellen werden Linien und aktuelle Abfahrzeiten eingeblendet.</li>
+        <li>Beim Klicken auf Verkehrsmittel bekommst du Infos &uuml;ber die n&auml;chsten Haltestellen und die jeweiligen Ankunftszeiten.</li>
+        <li>&Uuml;ber die &raquo;<em></em>Linienauswahl<em></em>&laquo; kannst du einzelne Linien ein- bzw. ausblenden.</li>
+      </ul>
+      <p style="text-align: justify;"><strong>Werden <em>Echtzeitdaten</em> f&uuml;r die&nbsp;<strong>Positionsberechnung</strong> verwendet?</strong></p>
+
+      <p style="text-align: justify;">Die Positionen werden anhand des offiziellen Fahrplans der Linz AG berechnet, da die Linz AG aktuell keine Echtzeitdaten anbietet. (<em>Stand: 03/2012</em>)</p>
+    </div>
+
+    <div id="about_dialog" title="Impressum" class="dialog">
+      <p style="text-align: justify;">Dieses Projekt wurde im Rahmen der Open Commons Region Linz als Gegenstand der Lehrveranstaltung "<em>IT-Projekt Wirtschaftsinformatik</em>" von folgenden Studierenden der Johannes Kepler Universit&auml;t Linz erstellt:</p>
+      <ul style="text-align: justify;">
+
+        <li style="text-align: justify;">Severin Schürz</li>
+        <li style="text-align: justify;">Paul Wörtl</li>
+        <li style="text-align: justify;">Sebastian Achleitner</li>
+      </ul>
+      <p style="text-align: justify;">Bei Fragen und Anregungen kannst du uns &uuml;ber diese E-Mail-Adresse erreichen: <a href="mailto:info@linz.faehrt.at">info@linz.faehrt.at</a>.</p>
+
+      <p style="text-align: right;"><span style="font-size: xx-small; color: #333333;">Datenquelle: CC-BY-3.0: Stadt Linz - <a href="http://data.linz.gv.at/" target="_blank"><span style="color: #333333;">data.linz.gv.at</span></a></span></p>
+    </div>
+
+    <div id="monitor_dialog" class="dialog">
+      
+    </div>
+  </body>
+</html>
